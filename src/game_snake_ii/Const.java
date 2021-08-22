@@ -6,6 +6,7 @@ public final class Const {
     public static final String VERSION = "1.1";
     public static final String COPYRIGHT = "JAVA A01 \"ШАГ\", Запорожье 2021 ";
     public static final String AUTHOR = "Перцух Алексей";
+    public static final String GIT_URL = "https://github.com/AlexeyPertsukh/hw17-java-serializable-game-snake2";
 
     public final static int CODE_CLEAR = 0;
     public final static int CODE_CRASH = -1;

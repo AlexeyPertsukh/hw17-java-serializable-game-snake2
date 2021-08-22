@@ -158,6 +158,8 @@ public class Game {
         System.out.println();
         System.out.println(Const.COPYRIGHT);
         System.out.println(Const.AUTHOR);
+        System.out.println();
+        System.out.println(Const.GIT_URL);
     }
 
     private void saveToFile()  {
