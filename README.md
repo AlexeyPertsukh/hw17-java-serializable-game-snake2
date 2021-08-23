@@ -1,4 +1,4 @@
-![alt text](snake2_screenschot1.jpg)
+![alt text](snake2_screenshot1.jpg)
 
 
 
