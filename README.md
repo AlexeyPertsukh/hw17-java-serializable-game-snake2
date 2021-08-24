@@ -1,5 +1,5 @@
 Lesson theme:
-- custom iterator in class
+- custom iterator for class
 - serializable 
 
 ![alt text](snake2_screenshot1.jpg)
