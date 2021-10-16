@@ -7,7 +7,7 @@ public class Game {
     public final static String LOCAL_PATCH = "/src/game_snake_ii/";
     public final static String FILE_NAME = "data.sav";
 
-    private Map map;
+    private GameField gameField;
     private Snake snake;
     private final Scanner sc;
     private  String command;
@@ -16,7 +16,7 @@ public class Game {
     private boolean commandOk;
 
     public Game() {
-        map = new Map();
+        gameField = new GameField();
         snake = new Snake();
         sc = new Scanner(System.in);
     }
@@ -25,7 +25,7 @@ public class Game {
     public void go(){
         printOnStart();
         do {
-            map.action(snake);
+            gameField.action(snake);
             printCommand();
             do {
                 inputCommand();
@@ -109,7 +109,7 @@ public class Game {
             return;
         }
 
-        int code = map.checkCell(newX, newY);
+        int code = gameField.checkCell(newX, newY);
 
         if(code == Const.CODE_CRASH || code == Const.CODE_EAT_STONE) {
             checkDeath(code);
@@ -166,7 +166,7 @@ public class Game {
         String filename = getFilename();
         try (ObjectOutputStream objectOutputStream = new ObjectOutputStream(new FileOutputStream(filename)))
         {
-            objectOutputStream.writeObject(map);
+            objectOutputStream.writeObject(gameField);
             objectOutputStream.writeObject(snake);
             System.out.println("Игра сохранена в файл");
 
@@ -180,7 +180,7 @@ public class Game {
         String filename = getFilename();
         try(ObjectInputStream objectInputStream = new ObjectInputStream(new FileInputStream(filename)))
         {
-            map = (Map) objectInputStream.readObject();
+            gameField = (GameField) objectInputStream.readObject();
             snake = (Snake) objectInputStream.readObject();
             System.out.println("Игра загружена из файла");
         }

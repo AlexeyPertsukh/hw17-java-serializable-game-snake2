@@ -2,8 +2,8 @@ package game_snake_ii;
 
 
 //вспомогательные методы
-public class My {
-    private My() {
+public class Util {
+    private Util() {
     }
 
     public static int random(int min, int max) {

@@ -3,7 +3,7 @@ package game_snake_ii;
 import java.io.Serializable;
 
 //игровое поле
-public class Map implements Serializable {
+public class GameField implements Serializable {
 
     private static final int CLEAR_CELL = 0;
     private static final String FORMAT_SNAKE_BODY = "[%d]";
@@ -13,7 +13,7 @@ public class Map implements Serializable {
     private final int[][] arr;
     private int step;
 
-    public Map() {
+    public GameField() {
         arr = new int[Const.ARR_LENGTH][Const.ARR_LENGTH];
     }
 
@@ -137,8 +137,8 @@ public class Map implements Serializable {
             int x;
             int y;
             do {
-                x = My.random(Const.ARR_LENGTH);
-                y = My.random(Const.ARR_LENGTH);
+                x = Util.random(Const.ARR_LENGTH);
+                y = Util.random(Const.ARR_LENGTH);
             }
             while(arr[y][x] != CLEAR_CELL);
             arr[y][x] = type;
